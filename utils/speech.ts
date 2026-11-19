@@ -101,7 +101,8 @@ const responsiveVoiceMap: Record<string, string> = {
 };
 
 const loadResponsiveVoice = () => {
-  if (typeof window !== 'undefined' && !window.responsiveVoice && !document.querySelector('script[src*="responsivevoice"]')) {
+  if (Platform.OS !== 'web' || typeof document === 'undefined') return;
+  if (!window.responsiveVoice && !document.querySelector('script[src*="responsivevoice"]')) {
     const script = document.createElement('script');
     script.src = 'https://code.responsivevoice.org/responsivevoice.js?key=FREE';
     script.async = true;
@@ -109,7 +110,7 @@ const loadResponsiveVoice = () => {
   }
 };
 
-if (typeof window !== 'undefined') {
+if (Platform.OS === 'web' && typeof window !== 'undefined') {
   loadResponsiveVoice();
 }
 
