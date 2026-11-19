@@ -1,101 +1,146 @@
 <div align="center">
-  <img src="assets/images/langsphere_logo.png" width="150" alt="Langsphere AI Logo" />
-  
-  # Langsphere AI ✨
+  <img src="assets/images/langsphere_logo.png" width="140" alt="Langsphere logo" />
+
+  # Langsphere AI
+
   **Learn. Speak. Explore. Shine.**
 
-  <p>
-    An intelligent, gamified language learning platform designed to help kids discover and master new languages with the power of Generative AI!
-  </p>
+  A gamified, AI-powered app that helps kids learn their heritage language:
+  Tamil, Hindi, Telugu, Malayalam and Kannada.
+
+  ![Expo](https://img.shields.io/badge/Expo-SDK%2056-000020?logo=expo)
+  ![React Native](https://img.shields.io/badge/React%20Native-0.85-61DAFB?logo=react)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript)
+  ![Platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS%20%7C%20Web-22C55E)
 </div>
 
 ---
 
-## 🌟 Overview
+## Features
 
-**Langsphere AI** is an interactive, multi-tier educational application built with React Native and Expo. It seamlessly blends AI-generated content (powered by Google's Gemini), gamified progression, and immersive exercises to teach languages like Tamil, Hindi, Telugu, Malayalam, and Kannada. 
+| | Feature | Description |
+|---|---|---|
+| 🎯 | **Placement test** | Assesses each child and places them in a Beginner, Intermediate or Pro tier. |
+| ✍️ | **Writing canvas** | Trace letters and words on screen. AI vision checks the handwriting and gives it a score. |
+| 🔤 | **Flashcards & alphabet grid** | Vocabulary practice with native text-to-speech, including Tamil. |
+| 🎙️ | **Pronunciation practice** | Record your voice and get feedback on fluency and accent. |
+| 🎮 | **Mini-games** | Listen & pick, picture match, pronounce it, and sentence builder, each with levels. |
+| 📖 | **Stories & culture** | Translated folk tales with audio narration, festivals, and collectible rewards. |
+| 💬 | **AI tutor** | A friendly mascot that chats with the child in the language they're learning. |
+| 🏆 | **XP, streaks & leaderboard** | Progress is tracked per language and per level. |
+| 👨‍👩‍👧 | **Parent portal** | A separate dashboard where parents can follow XP, streaks and completed modules. |
 
-Instead of static textbooks, Langsphere AI adapts to the student's proficiency level in real-time, generating dynamic lessons tailored just for them!
+## Tech stack
 
-## ✨ Key Features
+- **App:** React Native, Expo SDK 56, Expo Router, TypeScript
+- **UI:** NativeWind (Tailwind CSS), Reanimated, Lucide icons, React Three Fiber
+- **Auth & data:** Supabase (login), Firebase, MongoDB via an Express API
+- **AI:** Google Gemini (content and handwriting evaluation), Groq / Llama 3.1 (tutor chat)
+- **Speech:** Expo Speech plus native TTS
+- **Hosting:** Render (API), Vercel (web build), EAS (mobile builds)
 
-- 🎯 **Dynamic Placement Test**: Automatically assesses a student's proficiency and places them into the correct tier (Beginner, Intermediate, Pro).
-- ✍️ **AI Writing Canvas**: Practice writing alphabets and complex sentences by tracing directly on the screen, with content dynamically generated based on the user's level.
-- 🔤 **Vocabulary Flashcards**: Gamified flashcard system with speech synthesis to practice listening and reading.
-- 🗣️ **Conversational AI**: A friendly, interactive mascot that chats with students to improve their communication skills.
-- 🎙️ **Pronunciation Engine**: Real-time voice recording and playback to perfect accents and fluency.
-- 📖 **Reading Comprehension**: AI-generated short stories followed by interactive Q&A sessions.
-- 👨‍👩‍👧 **Parent Portal**: A dedicated secure dashboard for parents to track their superstar's XP, day streaks, and module completions.
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React Native, Expo, React Navigation (Expo Router)
-- **Styling & Animations**: NativeWind (Tailwind CSS), React Native Reanimated
-- **Backend & Auth**: Firebase (Authentication, Firestore Database)
-- **Generative AI**: Google Gemini API (`@google/genai`)
-- **Speech Services**: Expo Speech, Expo AV
-
-## 🚀 Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Expo CLI
+- Node.js 18 or later
+- npm
+- Android Studio / Xcode for native builds (optional)
 
-### Installation
+### 1. Clone and install
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Funtime162005/pdd.git
-   cd pdd
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Set up Environment Variables:**
-   Create a `.env` file in the root directory and add your keys:
-   ```env
-   EXPO_PUBLIC_FIREBASE_API_KEY=your_api_key
-   EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
-   EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-   EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
-   EXPO_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
-   ```
-
-4. **Run the App:**
-   ```bash
-   # For Web
-   npm run web
-
-   # For iOS/Android (via Expo Go)
-   npm start
-   ```
-
-## 📂 Project Structure
-
-```
-├── app/                  # Expo Router App Entry & Screens
-│   ├── (auth)/           # Login, Register, Parent Login
-│   ├── (parent)/         # Parent Dashboard Layout & Screens
-│   ├── (tabs)/           # Main Gamified Student Dashboard
-│   └── practice/         # Core Learning Modules (Writing, Reading, etc.)
-├── assets/               # Images, Fonts, Avatars, and Logos
-├── components/           # Reusable UI Components & Practice UIs
-├── context/              # React Context (AuthContext)
-├── utils/                # Helper functions (AI, Firebase, Speech)
-└── server/               # (Optional) Node.js Backend Utilities
+```bash
+git clone https://github.com/dineshchandar190297-afk/Deebak-Client.git
+cd Deebak-Client
+npm install
+cd server && npm install && cd ..
 ```
 
-## 👨‍👩‍👧 Parent Portal Access
+### 2. Environment variables
 
-To access the Parent Portal, log out of the student view, return to the main Welcome Screen, and click **"Parent Portal"** at the bottom. Use the student's email and password to log in securely and view their progression analytics!
+Create a `.env` file in the project root:
+
+```env
+# Backend API
+EXPO_PUBLIC_API_URL=http://localhost:5005
+MONGO_URI=your_mongodb_connection_string
+SERVER_PORT=5005
+
+# Supabase
+EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# Firebase
+EXPO_PUBLIC_FIREBASE_API_KEY=your_api_key
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
+
+# AI
+EXPO_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
+EXPO_PUBLIC_GROQ_API_KEY=your_groq_api_key
+```
+
+> Never commit your `.env` file. It is already listed in `.gitignore`.
+
+### 3. Run
+
+```bash
+npm run server     # start the backend API
+npm run web        # run in the browser
+npm run android    # build and run on Android
+npm run ios        # build and run on iOS
+```
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm start` | Start the Expo dev server (dev client) |
+| `npm run web` | Start the web version |
+| `npm run android` / `npm run ios` | Build and run the native app |
+| `npm run server` | Start the Express backend |
+| `npm run build` | Export a static web build to `dist/` |
+
+## Project structure
+
+```
+├── app/                    # Screens (Expo Router)
+│   ├── (auth)/             # Login, register, parent login
+│   ├── (tabs)/             # Home, games, culture, leaderboard, profile
+│   ├── (parent)/           # Parent dashboard
+│   ├── practice/[skill]    # Learning modules
+│   └── game-*.tsx          # Mini-games
+├── components/
+│   ├── practice/           # Writing canvas, flashcards, quiz, chat, voice UI
+│   ├── culture/            # Stories section
+│   └── navigation/         # Sidebar
+├── context/                # Auth context
+├── utils/                  # AI, speech, Supabase, Firebase, game levels, stories
+├── server/                 # Express + MongoDB API
+├── assets/                 # Images, fonts, mascot
+└── android/                # Native Android project
+```
+
+## API endpoints
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| POST | `/api/login` | Sign in or create a user |
+| POST | `/api/update-profile` | Update name or avatar |
+| POST | `/api/update-language` | Set the learning language |
+| POST | `/api/update-level` | Set the proficiency tier |
+| POST | `/api/update-progress` | Save XP and module progress |
+| GET | `/api/leaderboard` | Top learners |
+| GET | `/api/community` | Community users |
+| GET / POST | `/api/messages` | Community messages |
+
+## Parent portal
+
+From the welcome screen, tap **Parent Portal** and sign in with the student's email and password to see their progress.
 
 ---
 
 <div align="center">
-  <i>Built with ❤️ for the future of language learning.</i>
+  Built with ❤️ by <b>Dinesh</b>
 </div>
